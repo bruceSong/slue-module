@@ -1,0 +1,29 @@
+{
+  "name": "slue-module",
+  "version": "1.1.4",
+  "description": "modules relationship",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "keywords": [
+    "web",
+    "require",
+    "import",
+    "pack",
+    "module",
+    "js",
+    "jsx",
+    "css",
+    "less",
+    "html"
+  ],
+  "author": "471665225@qq.com",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "babel-core": "^6.26.3"
+  },
+  "_from": "slue-module@1.1.4",
+  "_resolved": "http://registry.npm.taobao.org/slue-module/download/slue-module-1.1.4.tgz"
+}
