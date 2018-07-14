@@ -20,3 +20,16 @@ const data = slueModule({
 });
 
 console.log(data);
+
+// const fs = require('fs');
+// const contents = fs.readFileSync('./test/app.js', 'utf8');
+// const babel = require('babel-core');
+// try {
+//     contents = babel.transform(contents, {
+//         comments: false
+//     }).code;
+// } catch(e) {
+
+// }
+
+// console.log(contents);
