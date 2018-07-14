@@ -3,7 +3,9 @@ module.exports = function(config) {
     let def = {
         filePath: './test/app.js',
         root: '/',
-        externals: {},
+        externals: {
+            'react': 'React'
+        },
         ext: ['.js', '.jsx', '.css', '.less', '.html'],
         defaultFileName: ['index'],
         // 路径配置

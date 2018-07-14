@@ -95,14 +95,14 @@ function searchModule(filePath, config, globalData) {
         }
     }
 
-    let moduleRegular = /(require\((\'|\")[\w\.\/-]+(\'|\")\))|(import\s+\w+\s+from\s+(\'|\")[\w\.\/-]+(\'|\"))|(import\s+(\'|\")[\w\.\/-]+(\'|\"))/g;
-    let itemRegular = /(?:require\((?:\'|\")([\w\.\/-]+)(?:\'|\")\))|(?:import\s+\w+\s+from\s+(?:\'|\")([\w\.\/-]+)(?:\'|\"))|(?:import\s+(?:\'|\")([\w\.\/-]+)(?:\'|\"))/;
+    let moduleRegular = /require\((\'|\")[\w\.\/-]+(?:\1)\)|import\s+(?:(?:\w+)|(?:\{(?:\s*\r*\n*\w+\s*,*)+\}))?(?:\s+from\s+)?(\'|\")[\w\.\/-]+(?:\2)/g;
+    let itemRegular = /require\((\'|\")([\w\.\/-]+)(?:\1)\)|import\s+(?:(?:\w+)|(?:\{(?:\s*\r*\n*\w+\s*,*)+\}))?(?:\s+from\s+)?(\'|\")([\w\.\/-]+)(?:\3)/;
     let matchResult = data.match(moduleRegular);
     if (matchResult) {
         matchResult.forEach(function(item) {
             let itemMatchRes = item.match(itemRegular);
             if (itemMatchRes) {
-                let moduleId = itemMatchRes[1] || itemMatchRes[2] || itemMatchRes[3];
+                let moduleId = itemMatchRes[2] || itemMatchRes[4];
                 let theModule = globalData.moduleList.find(function(item) {
                     return item.id == moduleId;
                 });
