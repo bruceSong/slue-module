@@ -172,6 +172,7 @@ module.exports = function(config) {
     }
 
     config = getConfig(config);
+    config.filePath = path.resolve(process.cwd(), config.filePath);
 
     let relayData = searchModule(config.filePath, config);
     if (relayData) {
