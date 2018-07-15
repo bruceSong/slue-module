@@ -80,7 +80,7 @@ function searchModule(filePath, config, globalData) {
         modulesMap: {}
     };
 
-    globalData.handledFile[filePath] = [];
+    globalData.handledFile[filePath] = [filePath];
 
     let data = fs.readFileSync(filePath);
     data = data.toString();
